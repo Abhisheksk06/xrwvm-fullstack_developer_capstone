@@ -23,3 +23,23 @@
 # - Year (IntegerField) with min value 2015 and max value 2023
 # - Any other fields you would like to include in car model
 # - __str__ method to print a car make object
+from django.db import models
+
+class Dealer(models.Model):
+    name = models.CharField(max_length=100)
+    location = models.CharField(max_length=100)
+    contact = models.CharField(max_length=15)
+
+    def __str__(self):
+        return self.name
+        
+from django.db import models
+
+class Review(models.Model):
+    dealer = models.ForeignKey('Dealer', on_delete=models.CASCADE)
+    customer_name = models.CharField(max_length=100)
+    review_text = models.TextField()
+    rating = models.IntegerField()
+
+    def __str__(self):
+        return f"{self.customer_name} - {self.rating}"
