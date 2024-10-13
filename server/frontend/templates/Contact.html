@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+    <!-- Load static files -->
+    {% load static %}
+    
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <style>
+        body {
+            padding: 20px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color:darkturquoise;">
+        <div class="container-fluid">
+            <h2 style="padding-right: 5%;">Dealerships</h2>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/contact">Contact Us</a> <!-- Active link -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <!-- Full-width cars.jpeg image at the top -->
+        <img src="{% static 'cars.jpeg' %}" alt="Cars" class="img-fluid mb-4">
+        
+        <!-- Contactus.png on the left and contact details on the right -->
+        <div class="row">
+            <div class="col-md-6 col-12 mb-4">
+                <img src="{% static 'contactus.png' %}" alt="Contact Us" class="img-fluid">
+            </div>
+            <div class="col-md-6 col-12">
+                <h4>Contact Information</h4>
+                <ul>
+                    <li><strong>Email:</strong> support@dealerships.com</li>
+                    <li><strong>Phone:</strong> +1 (555) 123-4567</li>
+                    <li><strong>Address:</strong> 123 Dealership Ave, City, State, 12345</li>
+                </ul>
+                <h4>Follow Us</h4>
+                <ul>
+                    <li><strong>Facebook:</strong> facebook.com/dealerships</li>
+                    <li><strong>Twitter:</strong> twitter.com/dealerships</li>
+                    <li><strong>Instagram:</strong> instagram.com/dealerships</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
